@@ -1,14 +1,27 @@
 public class FirstClass {
     public static void main(String[] args) {
-        Notebook notebook = new Notebook("600g", 2);
+        Notebook notebook = new Notebook(600, 900, 2019);
         System.out.println(notebook.weight + " " + notebook.price);
-        System.out.println(notebook.price);
+        notebook.checkPrice();
+        notebook.checkWeight();
+        notebook.checkLaptop();
 
-        Notebook heavyNotebook = new Notebook("1000g", 3);
-        System.out.println(heavyNotebook.weight);
-        System.out.println(heavyNotebook.price);
-        Notebook oldNotebook = new Notebook("1500g", 100);
-        System.out.println(oldNotebook.weight);
-        System.out.println(oldNotebook.price);
+        Notebook heavyNotebook = new Notebook(1500, 1500, 2017);
+        System.out.println(heavyNotebook.weight + " " + heavyNotebook.price);
+        heavyNotebook.checkPrice();
+        heavyNotebook.checkWeight();
+        heavyNotebook.checkLaptop();
+
+        Notebook oldNotebook = new Notebook(2000, 500, 1998);
+        System.out.println(oldNotebook.weight + " " + oldNotebook.price);
+        oldNotebook.checkPrice();
+        oldNotebook.checkWeight();
+        oldNotebook.checkLaptop();
+
+//        if (notebook.price < 900) {
+//            System.out.println("This notebook is cheap");
+//        } else {
+//            System.out.println("This notebook is quie expensive");
+//        }
     }
 }

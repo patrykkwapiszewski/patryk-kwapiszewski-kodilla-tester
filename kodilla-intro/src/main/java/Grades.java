@@ -1,6 +1,8 @@
 public class Grades {
     public int[] grades;
     public int size;
+    int gradeNumber;
+    int average;
 
     public Grades() {
         this.grades = new int[10];
@@ -8,28 +10,30 @@ public class Grades {
     }
 
     public void addNumber(int value) {
-        if (this.size == 10) {
-            return;
-        }
         this.grades[this.size] = value;
         this.size++;
     }
 
-    int lastGrade = grades[grades.length - 1];
-
-    int gradeNumber;
-    int average;
-
-    public void averageGrade() {
-        if (this.size < gradeNumber) {
-            average = grades[gradeNumber] + average;
-        }
+    public int getLastGeade() {
+        return grades[grades.length - 1];
     }
 
-    public int result = average / grades.length;
+    public double averageGrade() {
+        for (int i = 0; i < grades.length; i++){
+            average = average + grades[i];
+        }
+        return average / size;
+    }
 
-    public void main(String[] args) {
-        addNumber(2);
-        System.out.println(result);
+    public static void main(String[] args) {
+        Grades grades = new Grades();
+        grades.addNumber(4);
+        grades.addNumber(2);
+        grades.addNumber(4);
+        System.out.println(grades.grades[0]);
+        System.out.println(grades.size);
+        System.out.println(grades.grades.length);
+        System.out.println(grades.getLastGeade());
+        System.out.println(grades.averageGrade());
     }
 }
